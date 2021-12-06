@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from './_App.module.scss';
+import Cover from './components/Cover';
+
+import coverImg from './assets/images/podcast-cover.png';
+import episodes from './utilities/episodes';
+import EpisodesList from './components/EpisodesList';
 
 function App() {
+  const listHeader = "Listen to all the compressed.fm episodes";
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.wrapper}>
+      <Cover img={coverImg} />
+      <EpisodesList header={listHeader} episodes={episodes} />
     </div>
   );
 }
